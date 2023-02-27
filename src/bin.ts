@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 import {gInfo, showGInfo} from "./index"
 const ncol = require("ncol")
 ;(async ()=>{
-    const options = Object.fromEntries(process.argv.reduce((a, b)=>{
+    const options = Object.fromEntries(process.argv.slice(2).reduce((a, b)=>{
         const curr = a[a.length - 1]
         if(!curr || curr.length === 2){
             a.push([b])
@@ -14,7 +15,7 @@ const ncol = require("ncol")
     const head = options['-h'] || options['--hash'] || null
     const file = options['-f'] || options['--file'] || null
     const help = options.hasOwnProperty('--help')
-    if(help){
+    if(help || Object.keys(options).length === 0){
         return ncol.color(function (){
             return this
                 .info('Options:\n')

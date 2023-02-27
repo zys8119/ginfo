@@ -1,13 +1,12 @@
 {
   "name": "ginfo",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "git 相关工具库",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "dist/bin.js",
   "scripts": {
-    "start": "ts-node-esm src/bin.ts -h b428bdb3 -c /Users/zhangyunshan/work/internationalconventioncenter",
-    "test": "node dist/bin.js",
+    "start": "ts-node-esm src/bin.ts",
     "build": "rimraf dist && tsc -b -f"
   },
   "repository": {

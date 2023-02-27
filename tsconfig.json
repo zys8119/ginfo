@@ -1,15 +1,9 @@
 {
     "compilerOptions": {
-        "module": "CommonJS",
+        "module": "commonjs",
         "target": "es5",
-        "sourceMap": false,
-        "outDir": "dist",
         "declaration": true,
-        "allowJs": true,
-        "lib": [
-            "DOM",
-            "es5"
-        ]
+        "outDir": "dist"
     },
     "include": [
         "src/*"
