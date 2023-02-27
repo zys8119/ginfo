@@ -44,7 +44,7 @@ var ncol = require("ncol");
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                options = Object.fromEntries(process.argv.reduce(function (a, b) {
+                options = Object.fromEntries(process.argv.slice(2).reduce(function (a, b) {
                     var curr = a[a.length - 1];
                     if (!curr || curr.length === 2) {
                         a.push([b]);
@@ -58,7 +58,7 @@ var ncol = require("ncol");
                 head = options['-h'] || options['--hash'] || null;
                 file = options['-f'] || options['--file'] || null;
                 help = options.hasOwnProperty('--help');
-                if (help) {
+                if (help || Object.keys(options).length === 0) {
                     return [2 /*return*/, ncol.color(function () {
                             return this
                                 .info('Options:\n')
